@@ -11,8 +11,8 @@ const steps = [
     subtitle: 'Raw Material Selection',
     desc: 'The journey begins at the copper market in Srinagar\'s old city. Only high-purity copper sheets — sourced from trusted traders — are selected. The artisan tests flexibility, thickness, and tone before any work begins.',
     icon: '⚒️',
-    image: '/craft-hammering.png',
-    imageAlt: 'Raw copper sheet being inspected by artisan hands',
+    image: '/craft-step1-selection.png',
+    imageAlt: 'Kashmiri artisan selecting copper sheets at the Srinagar copper market',
   },
   {
     num: '02',
@@ -38,8 +38,8 @@ const steps = [
     subtitle: 'Food-Safe Lining',
     desc: 'The interior of all cooking and drinking vessels receives a traditional "Kalai" — a coating of pure food-grade tin applied by heating and burnishing. This protects the copper from acidic foods and makes it safe for daily use.',
     icon: '🫙',
-    image: '/family-kitchen.png',
-    imageAlt: 'Tin-lining being applied to the interior of a copper pot',
+    image: '/craft-step4-kalai.png',
+    imageAlt: 'Kashmiri craftsman applying traditional Kalai tin lining to a copper vessel over fire',
   },
   {
     num: '05',
@@ -47,8 +47,8 @@ const steps = [
     subtitle: 'Final Polish',
     desc: 'The finished piece is polished using natural tamarind paste and fine sand — an ancient Kashmiri method that brings out the deep, warm luster of the copper without chemicals. The result is a piece that shines for decades.',
     icon: '✨',
-    image: '/kashmir-flatlay.png',
-    imageAlt: 'Finished and polished copper utensils arranged for display',
+    image: '/craft-step5-chamak.png',
+    imageAlt: 'Kashmiri artisan polishing a copper Samovar with tamarind paste to a mirror shine',
   },
 ];
 
