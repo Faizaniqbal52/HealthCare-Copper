@@ -1,49 +1,296 @@
+/* ============================================================
+   Healthcare Copper — Global Design System
+   ============================================================ */
+
+/* --- Google Fonts import (backup) --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+/* --- CSS Custom Properties (Design Tokens) --- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors */
+  --copper-primary:   #B87333;
+  --copper-light:     #D4956A;
+  --copper-lighter:   #E8B89A;
+  --copper-dark:      #7A4E2D;
+  --copper-deep:      #5C3317;
+  --gold-accent:      #C9A84C;
+  --gold-light:       #E8C97A;
+  --chinar-red:       #8B2020;
+  --saffron:          #E8861A;
+  --saffron-light:    #F5A44A;
+  --deep-walnut:      #1C0F08;
+  --walnut-mid:       #2C1810;
+  --walnut-light:     #3D2415;
+  --cream:            #F5ECD7;
+  --cream-dark:       #EAD9C0;
+  --indigo-night:     #0D0B14;
+  --indigo-mid:       #1A1525;
+  --white:            #FFFFFF;
+  --text-primary:     #F5ECD7;
+  --text-muted:       rgba(245, 236, 215, 0.65);
+  --text-dark:        #1C0F08;
+
+  /* Gradients */
+  --gradient-copper:  linear-gradient(135deg, #B87333 0%, #D4956A 40%, #C9A84C 100%);
+  --gradient-dark:    linear-gradient(180deg, #0D0B14 0%, #1C0F08 100%);
+  --gradient-hero:    linear-gradient(135deg, #0D0B14 0%, #1A1525 50%, #2C1810 100%);
+  --gradient-overlay: linear-gradient(to bottom, rgba(13,11,20,0.3) 0%, rgba(28,15,8,0.85) 100%);
+
+  /* Fonts */
+  --font-heading:   var(--font-playfair), 'Playfair Display', Georgia, serif;
+  --font-sub:       var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-body:      var(--font-inter), 'Inter', -apple-system, sans-serif;
+
+  /* Spacing */
+  --section-pad:    clamp(80px, 10vw, 140px);
+  --container-max:  1280px;
+  --container-pad:  clamp(20px, 5vw, 80px);
+
+  /* Transitions */
+  --ease-smooth:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:       cubic-bezier(0.0, 0.0, 0.2, 1);
+  --transition-base: 0.4s var(--ease-smooth);
+
+  /* Shadows */
+  --shadow-copper:  0 0 40px rgba(184, 115, 51, 0.3);
+  --shadow-gold:    0 0 60px rgba(201, 168, 76, 0.2);
+  --shadow-card:    0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
+  scroll-behavior: smooth;
+  font-size: 16px;
   overflow-x: hidden;
 }
 
 body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--deep-walnut);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* --- Typography Scale --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
-a {
-  color: inherit;
+h1 { font-size: clamp(2.8rem, 7vw, 6rem); font-weight: 700; }
+h2 { font-size: clamp(2rem, 4.5vw, 3.8rem); font-weight: 600; }
+h3 { font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 600; }
+h4 { font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 500; }
+
+p {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* --- Container --- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+/* --- Section Padding --- */
+.section-pad {
+  padding: var(--section-pad) 0;
+}
+
+/* --- Copper Text Gradient --- */
+.text-copper {
+  background: var(--gradient-copper);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Copper Divider Line --- */
+.copper-line {
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: var(--gradient-copper);
+  margin: 16px auto;
+  border-radius: 2px;
+}
+
+/* --- Section Label --- */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::before,
+.section-label::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--copper-light);
+  opacity: 0.6;
+}
+
+/* --- Button Styles --- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--gradient-copper);
+  color: var(--deep-walnut);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
   text-decoration: none;
+  transition: var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn-primary:hover::after { opacity: 1; }
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-copper);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 34px;
+  background: transparent;
+  color: var(--copper-light);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(184, 115, 51, 0.5);
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+.btn-outline:hover {
+  border-color: var(--copper-primary);
+  background: rgba(184, 115, 51, 0.08);
+  color: var(--copper-lighter);
+  transform: translateY(-2px);
+}
+
+/* --- Glassmorphism Card --- */
+.glass-card {
+  background: rgba(44, 24, 16, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 115, 51, 0.15);
+  border-radius: 4px;
+}
+
+/* --- Paisley SVG Pattern Background --- */
+.paisley-bg {
+  position: relative;
+}
+.paisley-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cellipse cx='30' cy='20' rx='10' ry='16' fill='none' stroke='rgba(184,115,51,0.06)' stroke-width='1'/%3E%3Cellipse cx='30' cy='20' rx='6' ry='10' fill='none' stroke='rgba(184,115,51,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='30' cy='12' r='2' fill='rgba(184,115,51,0.04)'/%3E%3Cpath d='M30 36 Q38 42 30 50 Q22 42 30 36Z' fill='none' stroke='rgba(184,115,51,0.05)' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Chinar Leaf Float Animation --- */
+@keyframes floatLeaf {
+  0%   { transform: translateY(0)  rotate(0deg);   opacity: 0.7; }
+  33%  { transform: translateY(-18px) rotate(8deg);  opacity: 0.9; }
+  66%  { transform: translateY(-8px)  rotate(-5deg); opacity: 0.8; }
+  100% { transform: translateY(0)  rotate(0deg);   opacity: 0.7; }
+}
+
+.float-leaf {
+  animation: floatLeaf 6s var(--ease-smooth) infinite;
+}
+
+/* --- Copper Shimmer Animation --- */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, var(--copper-dark) 0%, var(--gold-light) 40%, var(--copper-primary) 60%, var(--copper-dark) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* --- Fade In Up Animation --- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.9s var(--ease-out) forwards;
+}
+
+/* --- Scrollbar Styling --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--deep-walnut); }
+::-webkit-scrollbar-thumb {
+  background: var(--copper-dark);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--copper-primary); }
+
+/* --- Selection Styling --- */
+::selection {
+  background: rgba(184, 115, 51, 0.3);
+  color: var(--cream);
+}
+
+/* --- Image utility --- */
+img { max-width: 100%; display: block; }
+
+/* --- Responsive helpers --- */
+@media (max-width: 768px) {
+  :root {
+    --section-pad: 60px;
   }
 }

@@ -1,0 +1,212 @@
+.products {
+  background: var(--deep-walnut);
+}
+
+.header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+
+.heading {
+  margin: 18px 0 14px;
+}
+
+.sub {
+  font-size: 1rem;
+  color: rgba(245, 236, 215, 0.6);
+  line-height: 1.75;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+
+.filter {
+  background: transparent;
+  border: 1px solid rgba(184, 115, 51, 0.25);
+  color: rgba(245, 236, 215, 0.6);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 9px 22px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter:hover {
+  border-color: var(--copper-primary);
+  color: var(--copper-light);
+}
+
+.filterActive {
+  background: var(--gradient-copper);
+  border-color: transparent;
+  color: var(--deep-walnut) !important;
+  font-weight: 700;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+/* Card */
+.card {
+  background: var(--walnut-mid);
+  border: 1px solid rgba(184, 115, 51, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s var(--ease-smooth);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.cardVisible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out), border-color 0.4s, box-shadow 0.4s !important;
+}
+
+.card:hover {
+  border-color: rgba(184, 115, 51, 0.45);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(184, 115, 51, 0.15);
+  transform: translateY(-6px);
+}
+
+/* Card image */
+.cardImg {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.cardImgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(28,15,8,0.1), rgba(28,15,8,0.5));
+  z-index: 1;
+}
+
+.badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--gradient-copper);
+  color: var(--deep-walnut);
+  padding: 5px 12px;
+  border-radius: 2px;
+}
+
+/* Card content */
+.cardContent {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+  opacity: 0.8;
+}
+
+.cardName {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cream);
+  line-height: 1.25;
+}
+
+.cardTagline {
+  font-family: var(--font-sub);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--copper-light);
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.cardDesc {
+  font-size: 0.875rem;
+  color: rgba(245, 236, 215, 0.55);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card actions */
+.cardActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.whatsappBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.whatsappBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+.detailBtn {
+  padding: 11px 14px;
+  background: transparent;
+  border: 1px solid rgba(184, 115, 51, 0.25);
+  color: rgba(245, 236, 215, 0.6);
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.detailBtn:hover {
+  border-color: var(--copper-primary);
+  color: var(--copper-light);
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

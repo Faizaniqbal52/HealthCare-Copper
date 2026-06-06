@@ -1,0 +1,199 @@
+.craft {
+  background: var(--deep-walnut);
+}
+
+.header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 80px;
+}
+
+.heading { margin: 18px 0 14px; }
+
+.sub {
+  font-size: 1rem;
+  color: rgba(245, 236, 215, 0.6);
+  line-height: 1.8;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Central vertical line */
+.timelineLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(184, 115, 51, 0.4) 10%,
+    rgba(184, 115, 51, 0.4) 90%,
+    transparent
+  );
+  transform: translateX(-50%);
+}
+
+/* Individual step */
+.step {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  gap: 0;
+  margin-bottom: 64px;
+  align-items: start;
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.stepLeft {
+  transform: translateX(-40px);
+}
+
+.stepRight {
+  transform: translateX(40px);
+}
+
+.stepVisible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* For left steps: card in col 1, dot in col 2, empty col 3 */
+.stepLeft .card { grid-column: 1; grid-row: 1; }
+.stepLeft .dot  { grid-column: 2; grid-row: 1; justify-self: center; }
+
+/* For right steps: empty col 1, dot in col 2, card in col 3 */
+.stepRight .card { grid-column: 3; grid-row: 1; }
+.stepRight .dot  { grid-column: 2; grid-row: 1; justify-self: center; }
+
+/* Dot */
+.dot {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--gradient-copper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 6px rgba(184, 115, 51, 0.15), 0 0 0 12px rgba(184, 115, 51, 0.06);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  margin-top: 28px;
+}
+
+.dot span {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--deep-walnut);
+  letter-spacing: 0.05em;
+}
+
+/* Card */
+.card {
+  background: var(--walnut-mid);
+  border: 1px solid rgba(184, 115, 51, 0.12);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+.card:hover {
+  border-color: rgba(184, 115, 51, 0.35);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.cardImage {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.cardImage img {
+  transition: transform 0.7s var(--ease-smooth);
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.06);
+}
+
+.cardImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 15, 8, 0.35);
+  z-index: 1;
+}
+
+.cardIcon {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  font-size: 1.8rem;
+  z-index: 2;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+}
+
+.cardContent {
+  padding: 24px 28px;
+}
+
+.stepSubtitle {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.stepTitle {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--cream);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.stepDesc {
+  font-size: 0.875rem;
+  color: rgba(245, 236, 215, 0.6);
+  line-height: 1.75;
+}
+
+/* Mobile: single column */
+@media (max-width: 768px) {
+  .timelineLine { left: 24px; }
+
+  .step {
+    grid-template-columns: 48px 1fr;
+    grid-template-rows: auto;
+  }
+
+  .stepLeft .card,
+  .stepRight .card {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .stepLeft .dot,
+  .stepRight .dot {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .dot {
+    width: 42px;
+    height: 42px;
+    margin-top: 16px;
+  }
+}
