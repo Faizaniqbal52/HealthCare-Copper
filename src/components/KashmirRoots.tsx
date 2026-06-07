@@ -96,30 +96,10 @@ export default function KashmirRoots() {
               <span className={styles.pillarDesc}>Where copper meets Kashmir</span>
             </div>
 
-            {/* Chinar Trees — Proper 5-lobed Chinar leaf */}
+            {/* Chinar Trees — AI-generated copper Chinar leaf */}
             <div className={styles.pillar}>
               <span className={styles.pillarIcon}>
-                <svg width="44" height="44" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="pg4" x1="10" y1="5" x2="90" y2="95" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#E8B87A"/><stop offset="45%" stopColor="#B87333"/><stop offset="100%" stopColor="#8B4513"/>
-                    </linearGradient>
-                    <linearGradient id="pg4s" x1="50" y1="70" x2="50" y2="108" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#C9A84C"/><stop offset="100%" stopColor="#8B6914"/>
-                    </linearGradient>
-                  </defs>
-                  <path d="M50 8 C44 8, 34 16, 32 26 C30 36, 36 44, 50 48 C64 44, 70 36, 68 26 C66 16, 56 8, 50 8Z" fill="url(#pg4)"/>
-                  <path d="M32 26 C26 18, 14 18, 10 28 C6 38, 14 48, 28 50 C36 46, 38 38, 36 30 Z" fill="url(#pg4)" opacity="0.92"/>
-                  <path d="M68 26 C74 18, 86 18, 90 28 C94 38, 86 48, 72 50 C64 46, 62 38, 64 30 Z" fill="url(#pg4)" opacity="0.92"/>
-                  <path d="M28 50 C20 46, 8 50, 6 62 C4 72, 14 80, 30 76 C40 70, 42 60, 38 54 Z" fill="url(#pg4)" opacity="0.85"/>
-                  <path d="M72 50 C80 46, 92 50, 94 62 C96 72, 86 80, 70 76 C60 70, 58 60, 62 54 Z" fill="url(#pg4)" opacity="0.85"/>
-                  <path d="M36 30 C38 42, 40 56, 50 78 C60 56, 62 42, 64 30 C58 38, 50 42, 42 38 Z" fill="url(#pg4)" opacity="0.65"/>
-                  <path d="M50 48 L50 100" stroke="url(#pg4s)" strokeWidth="2.5" strokeLinecap="round"/>
-                  <path d="M50 62 L30 76" stroke="#C9A84C" strokeWidth="1.2" strokeLinecap="round" opacity="0.6"/>
-                  <path d="M50 54 L28 62" stroke="#C9A84C" strokeWidth="1" strokeLinecap="round" opacity="0.5"/>
-                  <path d="M50 62 L70 76" stroke="#C9A84C" strokeWidth="1.2" strokeLinecap="round" opacity="0.6"/>
-                  <path d="M50 54 L72 62" stroke="#C9A84C" strokeWidth="1" strokeLinecap="round" opacity="0.5"/>
-                </svg>
+                <Image src="/icon-chinar.png" alt="Chinar Trees — eternal symbol of Kashmir" width={64} height={64} style={{ objectFit: 'contain', borderRadius: '8px' }} />
               </span>
               <span className={styles.pillarLabel}>Chinar Trees</span>
               <span className={styles.pillarDesc}>Our eternal symbol</span>

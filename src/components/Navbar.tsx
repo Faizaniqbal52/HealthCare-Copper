@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Navbar.module.css';
 
 const navLinks = [
@@ -42,42 +43,8 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="#hero" className={styles.logo} onClick={() => handleNav('#hero')}>
           <span className={styles.logoIcon}>
-            {/* Real 5-lobed Kashmiri Chinar Leaf SVG */}
-            <svg width="36" height="36" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="leafGrad" x1="10" y1="5" x2="90" y2="95" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#E8B87A"/>
-                  <stop offset="45%" stopColor="#B87333"/>
-                  <stop offset="100%" stopColor="#8B4513"/>
-                </linearGradient>
-                <linearGradient id="stemGrad" x1="50" y1="70" x2="50" y2="105" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#C9A84C"/>
-                  <stop offset="100%" stopColor="#8B6914"/>
-                </linearGradient>
-              </defs>
-              {/* Central top lobe */}
-              <path d="M50 8 C44 8, 34 16, 32 26 C30 36, 36 44, 50 48 C64 44, 70 36, 68 26 C66 16, 56 8, 50 8Z" fill="url(#leafGrad)"/>
-              {/* Left upper lobe */}
-              <path d="M32 26 C26 18, 14 18, 10 28 C6 38, 14 48, 28 50 C36 46, 38 38, 36 30 Z" fill="url(#leafGrad)" opacity="0.92"/>
-              {/* Right upper lobe */}
-              <path d="M68 26 C74 18, 86 18, 90 28 C94 38, 86 48, 72 50 C64 46, 62 38, 64 30 Z" fill="url(#leafGrad)" opacity="0.92"/>
-              {/* Left lower lobe */}
-              <path d="M28 50 C20 46, 8 50, 6 62 C4 72, 14 80, 30 76 C40 70, 42 60, 38 54 Z" fill="url(#leafGrad)" opacity="0.85"/>
-              {/* Right lower lobe */}
-              <path d="M72 50 C80 46, 92 50, 94 62 C96 72, 86 80, 70 76 C60 70, 58 60, 62 54 Z" fill="url(#leafGrad)" opacity="0.85"/>
-              {/* Center body connecting lobes */}
-              <path d="M36 30 C38 42, 40 56, 50 78 C60 56, 62 42, 64 30 C58 38, 50 42, 42 38 Z" fill="url(#leafGrad)" opacity="0.7"/>
-              {/* Central vein */}
-              <path d="M50 48 L50 95" stroke="url(#stemGrad)" strokeWidth="2.5" strokeLinecap="round"/>
-              {/* Left veins */}
-              <path d="M50 60 L30 72" stroke="#C9A84C" strokeWidth="1.2" strokeLinecap="round" opacity="0.6"/>
-              <path d="M50 52 L28 58" stroke="#C9A84C" strokeWidth="1" strokeLinecap="round" opacity="0.5"/>
-              {/* Right veins */}
-              <path d="M50 60 L70 72" stroke="#C9A84C" strokeWidth="1.2" strokeLinecap="round" opacity="0.6"/>
-              <path d="M50 52 L72 58" stroke="#C9A84C" strokeWidth="1" strokeLinecap="round" opacity="0.5"/>
-              {/* Stem curl */}
-              <path d="M50 95 C48 100, 46 104, 50 106 C54 104, 52 100, 50 95Z" fill="url(#stemGrad)" opacity="0.7"/>
-            </svg>
+            {/* AI-generated Kandkari-engraved Chinar leaf brand mark */}
+            <Image src="/brand-logo-chinar.png" alt="Healthcare Copper — Chinar leaf brand mark" width={40} height={40} style={{ objectFit: 'contain' }} />
           </span>
           <span className={styles.logoText}>
             <span className={styles.logoMain}>Healthcare</span>
