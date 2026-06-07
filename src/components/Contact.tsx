@@ -135,7 +135,7 @@ export default function Contact() {
                 <div className={styles.row}>
                   <div className={styles.field}>
                     <label htmlFor="contact-name">Your Name *</label>
-                    <input id="contact-name" name="name" type="text" required placeholder="e.g. Faizan Iqbal" />
+                    <input id="contact-name" name="name" type="text" required placeholder="e.g. John Doe" />
                   </div>
                   <div className={styles.field}>
                     <label htmlFor="contact-phone">Phone / WhatsApp</label>
